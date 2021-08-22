@@ -26,7 +26,7 @@
 ![uml](./images/uml.png)
 
 ### Notes
-- pull request : https://github.com/Razan-am/auth-api/pull/4
+- pull request : https://github.com/Razan-am/caps/pull/1
 - How do I install the app or library?
   - Clone the repo to your local machine
   - in the terminal, `run npm i`

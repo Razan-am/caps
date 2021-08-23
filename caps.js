@@ -15,7 +15,9 @@ let obj ={
     address:  faker.address.direction()
 }
 
-events.emit('pickup',obj);
-setTimeout(()=>{
-    events.emit('delivered',obj)
-},8000)
+setInterval(()=>{
+    events.emit('pickup',obj);
+},5000)
+
+
+

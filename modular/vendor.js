@@ -6,23 +6,21 @@ const faker = require('faker');
 events.on('pickup',orderDetails);
 events.on('in-transit',transiteORder);
 
+
 function orderDetails(payload){
     let obj={
         event:'pickup',
         time: new Date().toLocaleDateString(),
         payload
     }
-    setTimeout(()=>{
+   console.log('Event',obj)
 
-        console.log('Event',obj)
-    },5000)
     setTimeout(()=>{
         console.log('DRIVER: picked up',obj.payload.orderId);
-    },6000)
-    setTimeout(()=>{
-        events.emit('in-transit',payload)
-    },7000)
+        events.emit('in-transit',payload);
+    },1000)
 }
+
 
 function transiteORder(payload){
     let obj = {
@@ -31,4 +29,5 @@ function transiteORder(payload){
         payload
     }
     console.log('Event',obj);
+    events.emit('delivered',payload)
 }
